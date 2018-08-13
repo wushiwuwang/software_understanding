@@ -1,0 +1,6 @@
+#Mon, 13 Aug 2018 09:35:20 +0800
+
+info.app.version=0.1
+info.app.name=software_understanding
+grails.env=development
+info.app.grailsVersion=3.3.6
