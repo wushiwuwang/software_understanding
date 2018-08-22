@@ -2,10 +2,20 @@ package software_understanding
 
 class Analysis {
     Project project
-    String name //任务名
-    int id   //分析任务id多对一项目
+    String startline
+    String endline
+    String column
+    String group
+    String code
+    String message
+    int id    //代码包id 一对一
     static constraints = {
+        startline()
+        endline()
+        column()
+        group()
+        code()
+        message()
         id(blank: false)
-        name(inList:["1","2","3","4"],blank:false)
     }
 }

@@ -20,9 +20,50 @@
             </ul>
             </g:hasErrors>
             <g:form resource="${this.user}" method="POST">
-                <fieldset class="form">
-                    <f:all bean="user"/>
-                </fieldset>
+                <g:form resource="${this.user}" method="POST">
+                    <div class="dialog">
+                        <table>
+                            <tbody>
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="name">用户名:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:this.user,field:'name','errors')}">
+                                    <input type="text" id="name" name="name" value="${fieldValue(bean:this.user,field:'name')}"/>
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="password">密码:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:this.user,field:'password','errors')}">
+                                    <input type="text" id="password" name="password" value="${fieldValue(bean:this.user,field:'password')}"/>
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="phone">联系电话:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:this.user,field:'phone','errors')}">
+                                    <input type="text" id="phone" name="phone" value="${fieldValue(bean:this.user,field:'phone')}"/>
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="emailAdd">邮箱:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:this.user,field:'emailAdd','errors')}">
+                                    <input type="text" id="emailAdd" name="emailAdd" value="${fieldValue(bean:this.user,field:'emailAdd')}"/>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="注册" />
                 </fieldset>

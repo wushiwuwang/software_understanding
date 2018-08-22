@@ -14,6 +14,7 @@ body { background: #efefef;}
 .loginMain .tabwrap td i.ico-error { display: block; float: left; width: 18px; height: 17px; background: url(../images/ico_wrong.png) no-repeat; margin-right: 9px; position: relative; top: 2px;}
 .loginMain .tabwrap td span.errorword { color: #e8000c; line-height: 18px;}
 .loginMain .tabwrap td input[type=button] { width: 102px; height: 42px; color: #fff; font-size: 16px; border-radius: 2px;}
+.loginMain .tabwrap td input[type=submit] { width: 102px; height: 42px; color: #fff; font-size: 16px; border-radius: 2px;}
 .loginMain .tabwrap td input.save{ background: #00B38B;font-size: 16px}
 .loginMain .tabwrap td input.resetbtn { background: #999999; margin-left: 46px; }
 .loginMain .tabwrap td input[type=button]:hover { opacity: 0.9;}

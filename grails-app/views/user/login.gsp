@@ -35,12 +35,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>&nbsp;</td><td>
-                        <div class="buttons">
-                            <span class="button"><input type="submit" class="save"  value="登录"  /></span>
-                            <span class="button"><g:link type="submit" class="create1" action="create1">注册</g:link></span>
-                    </div>
-                    </td>
+                        <td>&nbsp;</td>
+                        <td><div class="buttons">
+                            <input  class="save" type="submit" value="登录"  />
+                            <input type="button" class="resetbtn" value="注册" onclick="location.href='create1.gap'" />
+                        </div></td>
                     </tr>
                 </table>
             </div>

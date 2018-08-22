@@ -1,3 +1,4 @@
+<%@ page import="software_understanding.User" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,10 +26,57 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.project}" method="POST">
-                <fieldset class="form">
-                    <f:all bean="project"/>
-                </fieldset>
+                <g:form resource="${this.project}" method="POST">
+                    <div class="dialog">
+                        <table>
+                            <tbody>
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="project_name">项目名:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:this.project,field:'project_name','errors')}">
+                                    <input type="text" id="project_name" name="project_name" value="${fieldValue(bean:this.project,field:'project_name')}"/>
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="time">创建时间:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:this.project,field:'time','errors')}">
+                                    <g:datePicker name="time" value="${this.project?.time}" precision="day" ></g:datePicker>
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="language">项目语言:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:this.project,field:'language','errors')}">
+                                    <input type="text" id="language" name="language" value="${fieldValue(bean:this.project,field:'language')}"/>
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="project_id">项目编号:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:this.project,field:'project_id','errors')}">
+                                    <input type="text" id="project_id" name="project_id" value="${fieldValue(bean:this.project,field:'project_id')}"/>
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="user">创建人:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:this.project,field:'user','errors')}">
+                                    <g:select optionKey="id" from="${software_understanding.User.list()}" name="user.id" value="${this.project?.user?.id}" ></g:select>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="创建" />
                 </fieldset>

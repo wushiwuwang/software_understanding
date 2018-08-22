@@ -9,9 +9,7 @@ class AnalysisController extends BaseController{
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond analysisService.list(params), model:[analysisCount: analysisService.count()]
+    def index() {
     }
 
     def show(Long id) {

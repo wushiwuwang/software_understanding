@@ -13,11 +13,15 @@
         <meta name="layout" content="main" />
 </head>
 <body>
-<div class="nav">
-    <li class="menuButton"><g:link class="create" action="create">创建信息</g:link></li>
-</div>
 <div class="superCtab">
     <div class="ctab-title clearfix"><h3>用户列表</h3> </div>
+    <div class="ctab-Main">
+        <div class="Mian-cont-btn clearfix">
+            <div class="operateBtn">
+                <a onclick="location.href='create.gap'" class="greenbtn publish">创建信息</a>
+            </div>
+        </div>
+    </div>
     <div class="ctab-Main">
         <div class="Mian-cont-wrap">
             <table border="0" cellspacing="0" cellpadding="0" class="defaultTable defaultTable2">

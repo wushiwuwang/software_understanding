@@ -1,3 +1,4 @@
+<%@ page import="software_understanding.Project" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,9 +27,75 @@
             </ul>
             </g:hasErrors>
             <g:form resource="${this.analysis}" method="POST">
-                <fieldset class="form">
-                    <f:all bean="analysis"/>
-                </fieldset>
+                <div class="dialog">
+                    <table>
+                        <tbody>
+                        <tr class="prop">
+                            <td valign="top" class="name">
+                                <label for="startline">开始行数:</label>
+                            </td>
+                            <td valign="top" class="value ${hasErrors(bean:this.analysis,field:'startline','errors')}">
+                                <input type="text" id="startline" name="startline" value="${fieldValue(bean:this.analysis,field:'startline')}"/>
+                            </td>
+                        </tr>
+
+                        <tr class="prop">
+                            <td valign="top" class="name">
+                                <label for="endline">结束行数:</label>
+                            </td>
+                            <td valign="top" class="value ${hasErrors(bean:this.analysis,field:'endline','errors')}">
+                                <input type="text" id="endline" name="endline" value="${fieldValue(bean:this.analysis,field:'endline')}"/>
+                            </td>
+                        </tr>
+
+                        <tr class="prop">
+                            <td valign="top" class="name">
+                                <label for="column">列数:</label>
+                            </td>
+                            <td valign="top" class="value ${hasErrors(bean:this.analysis,field:'column','errors')}">
+                                <input type="text" id="column" name="column" value="${fieldValue(bean:this.analysis,field:'column')}"/>
+                            </td>
+                        </tr>
+
+                        <tr class="prop">
+                            <td valign="top" class="name">
+                                <label for="group">错误信息或警告信息:</label>
+                            </td>
+                            <td valign="top" class="value ${hasErrors(bean:this.analysis,field:'group','errors')}">
+                                <input type="text" id="group" name="group" value="${fieldValue(bean:this.analysis,field:'group')}"/>
+                            </td>
+                        </tr>
+
+                        <tr class="prop">
+                            <td valign="top" class="name">
+                                <label for="code">错误代码:</label>
+                            </td>
+                            <td valign="top" class="value ${hasErrors(bean:this.analysis,field:'code','errors')}">
+                                <input type="text" id="code" name="code" value="${fieldValue(bean:this.analysis,field:'code')}"/>
+                            </td>
+                        </tr>
+
+                        <tr class="prop">
+                            <td valign="top" class="name">
+                                <label for="message">报错信息:</label>
+                            </td>
+                            <td valign="top" class="value ${hasErrors(bean:this.analysis,field:'message','errors')}">
+                                <input type="text" id="message" name="message" value="${fieldValue(bean:this.analysis,field:'message')}"/>
+                            </td>
+                        </tr>
+
+                        <tr class="prop">
+                            <td valign="top" class="name">
+                                <label for="project">项目名称:</label>
+                            </td>
+                            <td valign="top" class="value ${hasErrors(bean:this.analysis,field:'project','errors')}">
+                                <g:select optionKey="id" from="${ software_understanding.Project.list()}" name="project.project_id" value="${this.analysis?.project?.id}" ></g:select>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="创建" />
                 </fieldset>

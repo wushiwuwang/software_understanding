@@ -13,19 +13,26 @@
 </head>
 <body style="background: #f6f5fa;">
 <!--content S-->
-<div class="nav">
-    <li class="menuButton"><g:link class="create" action="create">创建信息</g:link></li>
-    <li class="menuButton"><g:link class="create" action="submit">上传项目文件</g:link></li>
-</div>
 <div class="superCtab">
     <div class="ctab-title clearfix"><h3>项目列表</h3></div>
-
     <div class="ctab-Main">
         <div class="ctab-Main-title">
             <ul class="clearfix">
                 <li class="cur">项目信息</li>
             </ul>
         </div>
+        <div class="ctab-Main">
+            <div class="Mian-cont-btn clearfix">
+                <div class="operateBtn">
+                    <a onclick="location.href='create.gap'" class="greenbtn publish">创建信息</a>
+                </div>
+            </div>
+        </div>
+
+        <g:uploadForm action="upload" controller="project" >
+            文件:<input type="file" name="myFile" id="myFile" />
+            <span>  <g:submitButton name="submit" value="开始上传"/>  </span>
+        </g:uploadForm>
     <div class="ctab-Main">
         <div class="Mian-cont-wrap">
             <table border="0" cellspacing="0" cellpadding="0" class="defaultTable defaultTable2">
@@ -44,6 +51,8 @@
                                     <g:sortableColumn property="language" title="项目语言" />
                                     <g:sortableColumn property="project_id" title="项目编号" />
                                     <g:sortableColumn property="user" title="用户" />
+                                    <g:sortableColumn property="user" title="操作" />
+                                    <g:sortableColumn property="user" title="操作" />
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -54,6 +63,8 @@
                                         <td><g:link action="show" id="${projectInstance.id}">${fieldValue(bean:projectInstance, field:'language')}</g:link></td>
                                         <td><g:link action="show" id="${projectInstance.id}">${fieldValue(bean:projectInstance, field:'project_id')}</g:link></td>
                                         <td><g:link action="show" id="${projectInstance.id}">${fieldValue(bean:projectInstance, field:'user')}</g:link></td>
+                                        <td><g:link class="create" action="submit">开始分析</g:link></td>
+                                        <td ><g:link class="list" controller="analysis" action="index" target="Mainindex">获取结果</g:link></td>
                                     </tr>
                                 </g:each>
                                 </tbody>
