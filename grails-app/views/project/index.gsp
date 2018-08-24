@@ -24,15 +24,18 @@
         <div class="ctab-Main">
             <div class="Mian-cont-btn clearfix">
                 <div class="operateBtn">
-                    <a onclick="location.href='create.gap'" class="greenbtn publish">创建信息</a>
+                    <a onclick="location.href='create.gap'" class="greenbtn add sp-photo">创建信息</a>
+                    <g:uploadForm action="upload" controller="project" >
+                        <a href="javascript:;" class="greenbtn add sp-photo">上传文件
+                            <input id="myFile" class="fileImgtp" type="file" size="30" name="myFile" >
+                        </a>
+                        <div class="buttons">
+                            <input  class="save" type="submit" value="开始上传"  />
+                        </div>
+                    </g:uploadForm>
                 </div>
             </div>
         </div>
-
-        <g:uploadForm action="upload" controller="project" >
-            文件:<input type="file" name="myFile" id="myFile" />
-            <span>  <g:submitButton name="submit" value="开始上传"/>  </span>
-        </g:uploadForm>
     <div class="ctab-Main">
         <div class="Mian-cont-wrap">
             <table border="0" cellspacing="0" cellpadding="0" class="defaultTable defaultTable2">

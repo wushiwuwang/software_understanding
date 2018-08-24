@@ -19,7 +19,6 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.user}" method="POST">
                 <g:form resource="${this.user}" method="POST">
                     <div class="dialog">
                         <table>

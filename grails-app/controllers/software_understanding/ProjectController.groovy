@@ -100,12 +100,15 @@ class ProjectController extends BaseController{
 
     def beforeInterceptor=[action: this.&auth]
     def submit = {
-        def SWAMPUSER = "lost66666"
-        def SWAMPPASS = "Aa76318320"
-        def CSA = "swa-csaweb-pd-01.mir-swap.org"
-        String shpath="C:\\Users\\腹黑熊\\IdeaProjects\\software\\grails-app\\shell\\test1.bat"; //程序路径
-        Process process =null;
-        String command2 = "cmd.exe /C start " + shpath
-        Runtime.getRuntime().exec(command2).waitFor()
+        //    ssh 192.168.17.129 "/bin/bash /home/fcd/桌面/SWAMP1/run.sh"
+        def cmdstring = "expect /home/ubuntu/IdeaProjects/untitled/test.sh httpd-2.4.6.tar.bz2"
+        def proc = Runtime.getRuntime().exec(cmdstring)
+        proc.waitFor()
+    }
+    def result = {
+        //    ssh 192.168.17.129 "/bin/bash /home/fcd/桌面/SWAMP1/run.sh"
+        def cmdstring = "expect /home/ubuntu/IdeaProjects/untitled/result.sh httpd-2.4.6.tar.bz2"
+        def proc = Runtime.getRuntime().exec(cmdstring)
+        proc.waitFor()
     }
 }

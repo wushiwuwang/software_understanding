@@ -10,7 +10,7 @@
         <div class="nav" role="navigation">
             <ul>
                 <li><g:link class="list" action="index1">首页</g:link></li>
-                <li><g:link class="list" action="index">用户列表</g:link></li>
+
                 <li><g:link class="create" action="create">新用户注册</g:link></li>
             </ul>
         </div>
